@@ -13,7 +13,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="icon" href="img/images.png" type="image/png">
     <title>Breed Portfolio - Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -35,8 +35,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-                <a class="navbar-brand logo_inner_page" href="index.html"><img src="img/logo2.png" alt=""></a>
+                <a class="navbar-brand logo_h" href="index.html"><img src="img/images.png" width="75" height="75"  alt=""></a>
+                <a class="navbar-brand logo_inner_page" href="index.html"><img src="img/images.png" width="75" height="75" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
@@ -81,17 +81,9 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
                     <div class="banner_content">
-                        <h3>Hey There !</h3>
-                        <h1 class="text-uppercase">I am jo Breed</h1>
-                        <h5 class="text-uppercase">Creative art director & designer</h5>
-                        <div class="social_icons my-5">
-                            <a href="#"><i class="ti-twitter"></i></a>
-                            <a href="#"><i class="ti-skype"></i></a>
-                            <a href="#"><i class="ti-instagram"></i></a>
-                            <a href="#"><i class="ti-dribbble"></i></a>
-                            <a href="#"><i class="ti-vimeo"></i></a>
-                        </div>
-                        <a class="primary_btn" href="#"><span>See My Work</span></a>
+                        <h3>Dobrodošli !</h3>
+                        <h1 class="text-uppercase">Prijava</h1>
+                        <a class="primary_btn" href="#"><span>Prijava</span></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
