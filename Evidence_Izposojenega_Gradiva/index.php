@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -35,39 +36,14 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html"><img src="img/images.png" width="75" height="75"  alt=""></a>
-                <a class="navbar-brand logo_inner_page" href="index.html"><img src="img/images.png" width="75" height="75" alt=""></a>
+              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+
             </div>
         </nav>
     </div>
@@ -81,14 +57,16 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
                     <div class="banner_content">
+                        <br>
+                        <br>
                         <h3>Dobrodošli !</h3>
                         <h1 class="text-uppercase">Prijava</h1>
-                        <a class="primary_btn" href="#"><span>Prijava</span></a>
+                        <a class="primary_btn" href="#"><span>Prijavi se tukaj !</span></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="home_right_img">
-                        <img class="img-fluid" src="img/banner/home-right.png" alt="">
+                        <img class="img-fluid" src="img/login2.png" alt="">
                     </div>
                 </div>
             </div>
