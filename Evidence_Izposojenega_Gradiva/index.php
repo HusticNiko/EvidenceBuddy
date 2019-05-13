@@ -60,8 +60,9 @@
                         <br>
                         <br>
                         <h3>Dobrodošli !</h3>
-                        <h1 class="text-uppercase">Prijava</h1>
-                        <a class="primary_btn" href="/Evidence_Izposojenega_Gradiva/Registracija.php"><span>Prijavi se tukaj !</span></a>
+                        <h1 class="text">EvidenceBuddy</h1>
+                        <a class="primary_btn" href="/Evidence_Izposojenega_Gradiva/Prijava.php"><span>Prijavi se tukaj !</span></a>
+                        <a class="primary_btn" href="/Evidence_Izposojenega_Gradiva/Registracija.php"><span>Registriraj se tukaj !</span></a>
                     </div>
                 </div>
                 <div class="col-lg-4">

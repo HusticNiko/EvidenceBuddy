@@ -39,9 +39,9 @@ include "connect.php";
                 </button>
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav">
-                        <li class="nav-item"><a class="nav-link" href="../index.php">Domov</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">Novi evidenčni račun</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Prijava v račun</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/index.php">Domov</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Registracija.php">Novi evidenčni račun</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Prijava.php">Prijava v račun</a></li>
                     </ul>
                 </div>
             </div>
