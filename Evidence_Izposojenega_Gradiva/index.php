@@ -26,9 +26,13 @@
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 
+
 </head>
 
 <body>
+
+
+
 
 <!--================ Start Header Area =================-->
 <header class="header_area">
