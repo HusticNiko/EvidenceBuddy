@@ -77,7 +77,7 @@ if(isset($_POST["submit"])) {
                                 <h2 class="contact-title">Ustvarjanje računa</h2>
                             </div>
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <form class="form-contact contact_form" action="Registracija.php" method="post" id="contactForm" novalidate="novalidate">
+                                <form class="form-contact contact_form" action="/Evidence_Izposojenega_Gradiva/Registracija.php" method="post" id="contactForm" novalidate="novalidate">
                                     <div class="row"></div>
                                     <div class="col-sm-6">
                                         <div class="form-inline">
