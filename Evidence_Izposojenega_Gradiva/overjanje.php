@@ -8,7 +8,7 @@
 include "connect.php";
 session_start();
 
-if ($_POST['action'] == 'login') {
+
     if (isset($_POST['upo-ime']) && isset($_POST['geslo'])) {
 
         // priprava SQL izraza
@@ -26,10 +26,9 @@ if ($_POST['action'] == 'login') {
             $_SESSION['upo-ime'] = $_POST['upo-ime'];
             $_SESSION['geslo'] = $_POST['geslo'];
 
-            header("Location: Domaca_stranUpo.php");
+            header("Location: Profil.php");
         }
     } else {
         header("Location: prijava.php");
     }
-}
 ?>
