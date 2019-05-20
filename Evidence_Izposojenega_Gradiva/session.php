@@ -14,11 +14,7 @@ if(!isset($_SESSION))
 if (isset($_SESSION['upo-ime'])){
     $user_check = $_SESSION['upo-ime'];
 
-<<<<<<< HEAD
-    $res = mysqli_query($conn, "SELECT * FROM `evidence` WHERE uporabnisko_ime = '$user_check'");
-=======
     $res = mysqli_query($conn, "SELECT * FROM `uporabnik` WHERE uporabnisko_ime = '$user_check'");
->>>>>>> ef7af5406a6be1bc28e8fd9935ee9675cf7db596
 
     if (!$res) {
         printf("Error: %s\n", mysqli_error($conn));
