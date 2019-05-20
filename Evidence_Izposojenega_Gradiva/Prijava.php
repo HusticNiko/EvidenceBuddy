@@ -42,6 +42,25 @@ include "Nav.php";
                         <br>
                         <h1 class="text-uppercase col-sm-6">Prijava</h1>
                         <div class="row">
+
+                            <div class="col-lg-8 mb-4 mb-lg-0">
+                                <form class="form-contact contact_form" action="overjanje.php" method="post" id="contactForm" novalidate="novalidate">
+                                    <div class="row"></div>
+                                    <div class="col-sm-6">
+                                        <div class="form-inline">
+                                            <input class="form-control" name="upo-ime"  type="text" placeholder="Uporabniško ime">
+                                            <input class="form-control mt-lg-2"  name="geslo"  type="password" placeholder="Geslo">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-lg-3 col-sm-6">
+                                        <button type="submit" name="submit" class="primary_btn button-contactForm" class="prijavabtn">Prijava</button>
+                                    </div>
+                                        <div class="container signin ">
+                                            <a>Še niste registrirani?</a>
+                                                <a href="/Evidence_Izposojenega_Gradiva/registracija.php">Ustvari račun</a>
+                                        </div>
+                                   </div>
+                            </form>
                             <div class="col-12">
                                 <div class="g-signin2 col-sm-6" data-onsuccess="onSignIn" data-theme="dark"></div>
                                 <script>
@@ -61,24 +80,6 @@ include "Nav.php";
                                     }
                                 </script>
                             </div>
-                            <div class="col-lg-8 mb-4 mb-lg-0">
-                                <form class="form-contact contact_form" action="overjanje.php" method="post" id="contactForm" novalidate="novalidate">
-                                    <div class="row"></div>
-                                    <div class="col-sm-6">
-                                        <div class="form-inline">
-                                            <input class="form-control" name="upo-ime"  type="text" placeholder="Uporabniško ime">
-                                            <input class="form-control mt-lg-2"  name="geslo"  type="password" placeholder="Geslo">
-                                        </div>
-                                    </div>
-                                    <div class="form-group mt-lg-3 col-sm-6">
-                                        <button type="submit" name="submit" class="primary_btn button-contactForm" class="prijavabtn">Prijava</button>
-                                    </div>
-                                        <div class="container signin ">
-                                            <a>Še niste registrirani?</a>
-                                                <a href="/Evidence_Izposojenega_Gradiva/registracija.php">Ustvari račun</a>
-                                        </div>
-                                   </div>
-                            </form>
                         </div>
                     </div>
                 </div>

@@ -107,8 +107,8 @@ if(isset($_POST["submit"])) {
                 </div>
             </div>
         </div>
-    </div>
-                </section>
+    </div
+</section>
 
 
 
