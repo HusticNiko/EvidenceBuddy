@@ -18,7 +18,7 @@ if(isset($_POST["submit"])) {
         $pasw = $_POST["geslo"];
 
 
-        $insert = $conn->query("INSERT into uporabnik (ime, priimek, uporabnisko_ime, email, geslo) VALUES ('" . $name . "','" . $surname . "','" . $upo_name . "','" . $email . "','" . $pasw . "')");
+        $insert = $conn->query("INSERT into uporabnik (ime, priimek, email, uporabnisko_ime, geslo) VALUES ('" . $name . "','" . $surname . "','" . $upo_name . "','" . $email . "','" . $pasw . "')");
         if ($insert) {
             echo "<div align='center' class=\"alert alert-success\">
   <strong>Račun ustvarjen!</strong> uspešno ste ustvarili račun.
