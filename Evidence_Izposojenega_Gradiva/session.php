@@ -14,7 +14,7 @@ if(!isset($_SESSION))
 if (isset($_SESSION['upo-ime'])){
     $user_check = $_SESSION['upo-ime'];
 
-    $res = mysqli_query($conn, "SELECT * FROM `Bancni_racun` WHERE uporabnisko_ime = '$user_check'");
+    $res = mysqli_query($conn, "SELECT * FROM `evidence` WHERE uporabnisko_ime = '$user_check'");
 
     if (!$res) {
         printf("Error: %s\n", mysqli_error($conn));
