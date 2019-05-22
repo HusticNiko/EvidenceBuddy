@@ -1,8 +1,7 @@
 <?php
 
 
-include "Nav.php";
-include "session.php";
+include "NavUpo.php";
 ?>
 
 <!doctype html>
@@ -42,7 +41,7 @@ include "session.php";
                             <a href="https:/www.facebook.com"><i class="ti-facebook"></i></a>
                             <a href="https:/www.vimeo.com"><i class="ti-vimeo"></i></a>
                         </div>
-                        <a class="primary_btn" href="#"><span>Dodaj evidenco</span></a>
+                        <a class="primary_btn" href="dodajanje_evidence.php"><span>Dodaj evidenco</span></a>
 
                         <br>
                         <br>
