@@ -37,25 +37,20 @@ include "session.php";
 
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="contact-title col-sm-6">Dodajanje evidence</h2>
+                                <h2 class="contact-title col-sm-6">Izposoja evidence</h2>
                             </div>
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <form class="form-contact contact_form" action="/Evidence_Izposojenega_Gradiva/Registracija.php" method="post" id="contactForm" novalidate="novalidate">
+                                <form class="form-contact contact_form" action="/Evidence_Izposojenega_Gradiva/" method="post" id="contactForm" novalidate="novalidate">
                                     <div class="row"></div>
                                     <div class="col-sm-6">
                                         <div class="form-inline">
                                             <input class="form-control" name=""  type="text" placeholder="Ime evidence:">
-                                            <input class="form-control" name=""  type="text" placeholder="">
-                                            <input class="form-control" name="" type="text" placeholder="">
-                                            <input class="form-control" name="" type="email" placeholder="">
-                                            <input class="form-control" name="" type="password" placeholder="">
-                                            <input class="form-control" name="" type="password" placeholder="">
                                         </div>
                                     </div>
 
 
                                     <div class="form-group mt-lg-3 col-sm-6 col-lg-12">
-                                        <button type="submit" name="submit" class="primary_btn button-contactForm" class="registerbtn ">Dodaj evidenco</button>
+                                        <button type="submit" name="submit" class="primary_btn button-contactForm" class="registerbtn ">Izposodi</button>
                                     </div>
                             </div>
                             </form>
