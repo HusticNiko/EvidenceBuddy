@@ -7,16 +7,14 @@
  */
 include "Nav.php";
 
-require_once('settings.php');
 
-$login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
+
 
 ?>
 <html>
 <head>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleusercontent.com" >
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,6 +29,11 @@ $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -63,29 +66,11 @@ $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('
                                         <div class="container signin ">
                                             <a>Še niste registrirani?</a>
                                                 <a href="/Evidence_Izposojenega_Gradiva/registracija.php">Ustvari račun</a>
-                                                <a href="<?= $login_url ?>">Login with Google</a>
+                                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
                                         </div>
                                    </div>
                             </form>
-                            <div class="col-12">
-                                <div class="g-signin2 col-sm-6" data-onsuccess="onSignIn" data-theme="dark"></div>
-                                <script>
-                                    function onSignIn(googleUser) {
-                                        // Useful data for your client-side scripts:
-                                        var profile = googleUser.getBasicProfile();
-                                        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-                                        console.log('Full Name: ' + profile.getName());
-                                        console.log('Given Name: ' + profile.getGivenName());
-                                        console.log('Family Name: ' + profile.getFamilyName());
-                                        console.log("Image URL: " + profile.getImageUrl());
-                                        console.log("Email: " + profile.getEmail());
-
-                                        // The ID token you need to pass to your backend:
-                                        var id_token = googleUser.getAuthResponse().id_token;
-                                        console.log("ID Token: " + id_token);
-                                    }
-                                </script>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,6 +84,39 @@ $login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+
+
+        if(profile){
+
+            $.ajax({
+
+                type: 'POST',
+
+                url: 'login_pro.php',
+
+                data: {id:profile.getId(), name:profile.getName()}
+
+            }).done(function(data){
+
+                console.log(data);
+
+                window.location.href = 'Profil.php';
+
+            }).fail(function() {
+
+                alert( "Posting failed." );
+
+            });
+
+        }
+
+    }
+
+</script>
 
 
 
