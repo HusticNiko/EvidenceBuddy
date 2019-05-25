@@ -6,6 +6,11 @@
  * Time: 17:08
  */
 include "Nav.php";
+
+require_once('settings.php');
+
+$login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
+
 ?>
 <html>
 <head>
@@ -58,6 +63,7 @@ include "Nav.php";
                                         <div class="container signin ">
                                             <a>Še niste registrirani?</a>
                                                 <a href="/Evidence_Izposojenega_Gradiva/registracija.php">Ustvari račun</a>
+                                                <a href="<?= $login_url ?>">Login with Google</a>
                                         </div>
                                    </div>
                             </form>
