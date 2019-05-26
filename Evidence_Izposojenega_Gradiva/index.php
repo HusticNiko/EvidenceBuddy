@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="home_right_img">
-                        <img class="img-fluid" src="img/login2.png" alt="">
+                        <img class="img-fluid" src="img/profilka.png" alt="">
                     </div>
                 </div>
             </div>
