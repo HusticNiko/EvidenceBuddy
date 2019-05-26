@@ -1,4 +1,4 @@
-# Vodenje Evidence
+# Vodenje Evidence  ![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 
 Aplikacija namenjena shranjevanju in vodenju evidenc izposojenega gradiva.
 
@@ -6,15 +6,15 @@ Aplikacija namenjena shranjevanju in vodenju evidenc izposojenega gradiva.
 ### Predpogoji
 
 Za zagon aplikacije morate imeti nameščene stvari:
-PHPStorm
-MySql
+PHPStorm/
+MySql/
 Wamp/Xampp
 
 ```
-[](http://www.wampserver.com/en/)
-[](https://www.apachefriends.org/index.html)
-[](https://www.jetbrains.com/phpstorm/)
-[](https://www.mysql.com/)
+[WAMP](http://www.wampserver.com/en/)
+[XAMPP](https://www.apachefriends.org/index.html)
+[PHPStorm](https://www.jetbrains.com/phpstorm/)
+[MySql](https://www.mysql.com/)
 ```
 
 ### Installing
