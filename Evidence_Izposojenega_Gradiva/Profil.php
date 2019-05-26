@@ -33,10 +33,6 @@ include "NavUpo.php";
                     <div class="banner_content">
                         <br><br><br><br><br><br><br>
                         <h3>Pozdravljen!</h3>
-                        <?php echo $_SESSION['id'];
-
-                        ?>
-
                         <h1 class="text-uppercase"><?php echo $Ime; ?></h1>
                         <div class="social_icons my-5">
                             <a href="https:/www.twitter.com"><i class="ti-twitter"></i></a>

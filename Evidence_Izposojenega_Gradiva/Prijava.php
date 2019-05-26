@@ -110,12 +110,8 @@ $clientID = '962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleuserconten
             $google_account_info = $google_oauth->userinfo->get();
             $email =  $google_account_info->email;
             $name =  $google_account_info->name;
-
-
-                $mysqli = new mysqli("localhost", "root", "", "evidence");
-                $result = $mysqli->query($sql);
-
-                    $insert = $conn->query("INSERT INTO users (name,email) VALUES ('" . $name . "', '" . $email . "')");
+            $mysqli = new mysqli("localhost", "root", "", "evidence");
+            $insert = $conn->query("INSERT INTO `uporabnik` (ime,email) VALUES ('" . $name . "', '" . $email . "')");
 
 
 
