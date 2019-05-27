@@ -52,7 +52,7 @@ include "Nav.php";
                         <div class="row">
 
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <form class="form-contact contact_form" action="overjanje.php" method="post" id="contactForm" novalidate="novalidate">
+                                <form class="form-contact contact_form" action="/Evidence_Izposojenega_Gradiva/overjanje.php" method="post" id="contactForm" novalidate="novalidate">
                                     <div class="row"></div>
                                     <div class="col-sm-6">
                                         <div class="form-inline">
@@ -86,7 +86,7 @@ include "Nav.php";
 
 <?php
 require_once 'google-api-php-client-2.2.3/vendor/autoload.php';
-
+include "connect.php";
 // init configuration
 $clientID = '962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleusercontent.com';
     $clientSecret = '6LTOpoJU5OOodNNaWQlSQxXu';
@@ -139,15 +139,16 @@ $clientID = '962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleuserconten
 
                 url: 'login_pro.php',
 
-                data: {id:profile.getId(), name:profile.getName()}
+                data: {name:profile.getName()}
 
-            }).done(function(data){
+
+            }).success(function(data){
 
                 console.log(data);
 
-                window.location.href = 'Profil.php';
+                window.location.href = '/Evidence_Izposojenega_Gradiva/Profil.php';
 
-            }).fail(function() {
+            }).error(function() {
 
                 alert( "Posting failed." );
 
