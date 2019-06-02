@@ -27,6 +27,8 @@ session_start();
             $_SESSION['geslo'] = $_POST['geslo'];
 
             header("Location: Profil.php");
+        }else{
+            header("Location: prijava.php?napaka=1");
         }
     } else {
         header("Location: prijava.php");

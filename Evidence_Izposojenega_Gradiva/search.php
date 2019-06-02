@@ -5,6 +5,7 @@
  * Date: 4. 01. 2019
  * Time: 20:30
  */
+include "NavUpo.php";
 include "connect.php";
 include "session.php";
 ?>
@@ -23,12 +24,15 @@ if (isset($_POST['search'])){
     $stevec = mysqli_num_rows($query);
 }
 ?>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/images.png" type="image/png">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -36,70 +40,66 @@ if (isset($_POST['search'])){
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galerija.css">
 </head>
+
 <body>
-<header class="header_area">
-    <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
+<section class="home_banner_area">
+    <div class="banner_inner">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="banner_content">
+                        <br><br><br><br><br><br><br>
+                        <form class="navbar-form navbar-center" action="search.php" role="search" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="search" placeholder="Išči...">
+                            </div>
+                            <button type="submit" class="btn btn-default">Poišči</button>
+                        </form>
+                        <br>
+                        <div class="container">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav">
-                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Profil.php">Domaca stran "<?php echo $uporabniskoIme; ?>"</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Gradivo.php">Gradiva</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/odjava.php">Odjava</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-<br>
-<form class="navbar-form navbar-center" action="search.php" role="search" method="post">
-    <div class="form-group">
-        <input type="text" class="form-control" name="search" placeholder="Išči...">
-    </div>
-    <button type="submit" class="btn btn-default">Poišči</button>
-</form>
-<br>
-<div class="container">
-
-    <div class="row">
-        <?php
-        if ($stevec == 0) {
-            echo '<div class=\"alert alert-warning\">
+                            <div class="row">
+                                <?php
+                                if ($stevec == 0) {
+                                    echo '<div class=\"alert alert-warning\">
                     <strong>Opozorilo:</strong> Ni bilo najdenega rezultata.
                 </div>';
-        } else {
-            while ($row = mysqli_fetch_assoc($query)) {
-                $imageThumbURL = 'Evidenca/'.$row["pot"];
-                $imageURL = 'Evidenca/'.$row["pot"];
+                                } else {
+                                    while ($row = mysqli_fetch_assoc($query)) {
+                                        $imageThumbURL = 'Evidenca/'.$row["pot"];
+                                        $imageURL = 'Evidenca/'.$row["pot"];
 
-                ?>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <h4>Slika</h4>
-                            <p><?php echo $row['imeevidence']; ?></p>
+                                        ?>
+                                        <div class="col-xs-6 col-sm-4 col-md-4">
+                                            <div class="thumbnail">
+                                                <div class="caption">
+                                                    <h4>Slika</h4>
+                                                    <p><?php echo $row['imeevidence']; ?></p>
+                                                </div>
+                                                <img src="<?php echo $imageThumbURL; ?>" alt="..." style="height: 200px; width: 600px">
+                                            </div>
+                                        </div>
+                                    <?php }
+                                } ?>
+                            </div>
                         </div>
-                        <img src="<?php echo $imageThumbURL; ?>" alt="..." style="height: 200px; width: 600px">
+                        <br>
+                        <form action="dodajanje_evidence.php" method="post" enctype="multipart/form-data">
+                            <input type="submit" name="submit" value="Dodajanje evidence"/>
+                        </form>
                     </div>
                 </div>
-            <?php }
-        } ?>
+                <div class="col-lg-4">
+                    <div class="home_right_img">
+                        <img class="img-fluid" src="img/banner/home-right.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div><!-- /.container -->
-</body>
+</section>
 </html>

@@ -6,15 +6,12 @@
  * Time: 17:08
  */
 include "Nav.php";
-
-
-
-
 ?>
 <html>
 <head>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleusercontent.com" >
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,11 +26,6 @@ include "Nav.php";
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -48,11 +40,18 @@ include "Nav.php";
                         <br>
 
                         <br>
+                        <?php
+                        if(isset($_GET['napaka'])==true){
+                            echo '<script language="javascript">';
+                            echo 'alert("Napačno ime ali geslo")';
+                            echo '</script>';
+                        }
+                        ?>
                         <h1 class="text-uppercase col-sm-6">Prijava</h1>
                         <div class="row">
 
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <form class="form-contact contact_form" action="/Evidence_Izposojenega_Gradiva/overjanje.php" method="post" id="contactForm" novalidate="novalidate">
+                                <form class="form-contact contact_form" action="overjanje.php" method="post" id="contactForm" novalidate="novalidate">
                                     <div class="row"></div>
                                     <div class="col-sm-6">
                                         <div class="form-inline">
@@ -66,10 +65,28 @@ include "Nav.php";
                                         <div class="container signin ">
                                             <a>Še niste registrirani?</a>
                                                 <a href="/Evidence_Izposojenega_Gradiva/registracija.php">Ustvari račun</a>
-                                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                                         </div>
                                    </div>
                             </form>
+                            <div class="col-12">
+                                <div class="g-signin2 col-sm-6" data-onsuccess="onSignIn" data-theme="dark"></div>
+                                <script>
+                                    function onSignIn(googleUser) {
+                                        // Useful data for your client-side scripts:
+                                        var profile = googleUser.getBasicProfile();
+                                        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                                        console.log('Full Name: ' + profile.getName());
+                                        console.log('Given Name: ' + profile.getGivenName());
+                                        console.log('Family Name: ' + profile.getFamilyName());
+                                        console.log("Image URL: " + profile.getImageUrl());
+                                        console.log("Email: " + profile.getEmail());
+
+                                        // The ID token you need to pass to your backend:
+                                        var id_token = googleUser.getAuthResponse().id_token;
+                                        console.log("ID Token: " + id_token);
+                                    }
+                                </script>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,82 +100,6 @@ include "Nav.php";
         </div>
     </div>
 </section>
-
-<?php
-require_once 'google-api-php-client-2.2.3/vendor/autoload.php';
-include "connect.php";
-// init configuration
-$clientID = '962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleusercontent.com';
-    $clientSecret = '6LTOpoJU5OOodNNaWQlSQxXu';
-        $redirectUri = 'http://localhost:63342/Evidence_Izposojenega_Gradiva/Profil.php';
-
-            // create Client Request to access Google API
-            $client = new Google_Client();
-            $client->setClientId($clientID);
-            $client->setClientSecret($clientSecret);
-            $client->setRedirectUri($redirectUri);
-            $client->addScope("email");
-            $client->addScope("profile");
-
-            // authenticate code from Google OAuth Flow
-            if (isset($_GET['code'])) {
-            $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-            $client->setAccessToken($token['access_token']);
-
-            // get profile info
-            $google_oauth = new Google_Service_Oauth2($client);
-            $google_account_info = $google_oauth->userinfo->get();
-            $email =  $google_account_info->email;
-            $name =  $google_account_info->name;
-            $mysqli = new mysqli("localhost", "root", "", "evidence");
-            $insert = $conn->query("INSERT INTO `uporabnik` (ime,email) VALUES ('" . $name . "', '" . $email . "')");
-
-
-
-
-            // now you can use this profile info to create account in your website and make user logged in.
-            } else {
-            echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
-
-            }
-            ?>
-
-
-
-
-<script type="text/javascript">
-    function onSignIn(googleUser) {
-
-        var profile = googleUser.getBasicProfile();
-
-        if(profile){
-
-            $.ajax({
-
-                type: 'POST',
-
-                url: 'login_pro.php',
-
-                data: {name:profile.getName()}
-
-
-            }).success(function(data){
-
-                console.log(data);
-
-                window.location.href = '/Evidence_Izposojenega_Gradiva/Profil.php';
-
-            }).error(function() {
-
-                alert( "Posting failed." );
-
-            });
-
-        }
-
-    }
-
-</script>
 
 
 

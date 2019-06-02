@@ -59,8 +59,8 @@ include "NavUpo.php";
                                         <div class="col-xs-6 col-sm-4 col-md-4">
                                             <div class="thumbnail">
                                                 <div class="caption">
-                                                    <h4>Slika</h4>
-                                                    <p><?php echo $row['imeevidence']; ?></p>
+                                                    <h4><?php echo $row['imeevidence']; ?></h4>
+                                                    <p><?php echo $row['opis']; ?></p>
                                                 </div>
                                                 <img src="<?php echo $imageThumbURL; ?>" alt="..." style="height: 200px; width: 600px">
                                             </div>
@@ -73,15 +73,11 @@ include "NavUpo.php";
                                 } ?>
                             </div>
                         </div>
-                        <br>
-                        <form action="dodajanje_evidence.php" method="post" enctype="multipart/form-data">
-                            <input type="submit" name="submit" value="Dodajanje evidence"/>
-                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="home_right_img">
-                        <img class="img-fluid" src="img/banner/home-right.png" alt="">
+                        <img class="img-fluid" src="img/banner/galerija.png" alt="">
                     </div>
                 </div>
             </div>
