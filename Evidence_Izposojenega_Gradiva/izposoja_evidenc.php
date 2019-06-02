@@ -1,8 +1,49 @@
 <?php
 
 
-include "Nav.php";
+include "NavUpo.php";
 include "session.php";
+
+if (isset($_POST['search'])) {
+    $search = mysqli_real_escape_string($conn, $_POST['query']);
+
+    //SELECT * FROM `evidenca` WHERE imeevidence LIKE "harry" AND tk_uporabnik = 0;
+    $sql = "SELECT * FROM evidenca WHERE imeevidence LIKE '%$search%' AND status_gradiva = 'NEIZPOSOJENO'";
+    $result = mysqli_query($conn, $sql);
+    $queryResult = mysqli_num_rows($result);
+} else {
+    echo "Ni rezultatov.";
+}
+
+if (isset($_POST['submit'])) {
+    $selectOption = $_POST['imegradiva'];
+
+    $date = date('Y/m/d H:i:s');
+
+
+    $insert = $conn->query("INSERT into izposoja (datum, tk_uporabnik, tk_evidenca) VALUES ('" . $date . "','" . $loggin_session . "','" . $selectOption . "')");
+    if ($insert) {
+        echo "<div align='center' class=\"alert alert-success\">
+  <strong>Gradivo izposojeno!</strong> uspešno ste izposodili gradivo.
+</div>";
+    } else {
+        echo "<div align='center' class=\"alert alert-warning\">
+  <strong>Gradivo ni izposojeno!</strong> nekaj je šlo narobe poskusi še enkrat!
+</div>";
+    }
+    $update = $conn->query("UPDATE evidenca set status_gradiva = 'IZPOSOJENO' where ID = $selectOption ");
+    if ($update) {
+        echo "<div align='center' class=\"alert alert-success\">
+  <strong>Gradivo posodobljeno!</strong> uspešno ste izposodili gradivo.
+</div>";
+    } else {
+        echo "<div align='center' class=\"alert alert-warning\">
+  <strong>Gradivo ni posodobljeno!</strong> nekaj je šlo narobe poskusi še enkrat!
+</div>";
+    }
+
+}
+
 ?>
 
 <!doctype html>
@@ -40,19 +81,30 @@ include "session.php";
                                 <h2 class="contact-title col-sm-6">Izposoja evidence</h2>
                             </div>
                             <div class="col-lg-8 mb-4 mb-lg-0">
-                                <form class="form-contact contact_form" action="/Evidence_Izposojenega_Gradiva/" method="post" id="contactForm" novalidate="novalidate">
+                                <form class="form-contact contact_form"
+                                      action="/Evidence_Izposojenega_Gradiva/izposoja_evidenc.php"
+                                      method="post" id="contactForm" novalidate="novalidate">
                                     <div class="row"></div>
                                     <div class="col-sm-6">
                                         <div class="form-inline">
-                                            <input class="form-control" name=""  type="text" placeholder="Ime evidence:">
+                                            <input class="form-control" name="query" type="text"
+                                                   placeholder="Ime evidence:">
+                                            <button type="submit" name="search" class="primary_btn button-contactForm"
+                                                    class="searchbtn">Išči
+                                            </button>
+
+
                                         </div>
                                     </div>
-
-
-                                    <div class="form-group mt-lg-3 col-sm-6 col-lg-12">
-                                        <button type="submit" name="submit" class="primary_btn button-contactForm" class="registerbtn ">Izposodi</button>
-                                    </div>
                             </div>
+                            </form>
+                            <form action="/Evidence_Izposojenega_Gradiva/izposoja_evidenc.php" method="post">
+                                <select name="imegradiva">
+                                    <?php while ($row1 = mysqli_fetch_assoc($result)):; ?>
+                                        <option value="<?php echo $row1['ID']; ?>"><?php echo $row1['imeevidence']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                                <input type="submit" name="submit" value="Izposodi"/>
                             </form>
                         </div>
 
