@@ -2,6 +2,13 @@
 
 
 include "NavUpo.php";
+$st_evidenc = mysqli_query($conn, "SELECT COUNT(*) AS `count1` FROM `evidenca` WHERE tk_uporabnik = '".$loggin_session."'");
+$row1 = mysqli_fetch_array($st_evidenc);
+$count1 = $row1['count1'];
+
+$st_izposoj = mysqli_query($conn, "SELECT COUNT(*) AS `count2` FROM `izposoja` WHERE tk_uporabnik = '".$loggin_session."'");
+$row2 = mysqli_fetch_array($st_izposoj);
+$count2 = $row2['count2'];
 ?>
 
 <!doctype html>
@@ -35,10 +42,10 @@ include "NavUpo.php";
                         <h3>Pozdravljen!</h3>
                         <h1 class="text-uppercase"><?php echo $Ime; ?></h1>
                         <div class="social_icons my-5">
-                            <a href="https:/www.twitter.com"><i class="ti-twitter"></i></a>
+                            <a href="https:/www.twitter.com/<?php echo $uporabniskoIme; ?>"><i class="ti-twitter"></i></a>
                             <a href="https:/www.skype.com"><i class="ti-skype"></i></a>
-                            <a href="https:/www.instagram.com"><i class="ti-instagram"></i></a>
-                            <a href="https:/www.facebook.com"><i class="ti-facebook"></i></a>
+                            <a href="https:/www.instagram.com/<?php echo $uporabniskoIme; ?>"><i class="ti-instagram"></i></a>
+                            <a href="https:/www.facebook.com/<?php echo $uporabniskoIme; ?>"><i class="ti-facebook"></i></a>
                             <a href="https:/www.vimeo.com"><i class="ti-vimeo"></i></a>
                         </div>
                         <a class="primary_btn" href="dodajanje_evidence.php"><span>Dodaj evidenco</span></a>
@@ -47,12 +54,12 @@ include "NavUpo.php";
                         <br>
                         <div class="row justify-content-lg-start justify-content-center col-sm-6">
                             <div class="statistics_item col-sm-6">
-                                <h3><span class="counter">15</span></h3>
+                                <h3><span class="counter"><?php echo $count2; ?></span></h3>
                                 <p>Št. izposoj</p>
                             </div>
                             <div class="statistics_item col-sm-6">
-                                <h3><span class="counter">12</span></h3>
-                                <p>Št. vračil</p>
+                                <h3><span class="counter"><?php echo $count1; ?></span></h3>
+                                <p>Št. dodanih evidenc</p>
                             </div>
                         </div>
                     </div>

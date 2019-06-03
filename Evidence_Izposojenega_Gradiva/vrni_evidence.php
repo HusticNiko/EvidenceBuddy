@@ -69,9 +69,6 @@ WHERE e.status_gradiva = 'IZPOSOJENO';";
 
                         </div>
 
-                        <br>
-                        <br>
-
                     </div>
                 </div>
                 <div class="col-lg-4">

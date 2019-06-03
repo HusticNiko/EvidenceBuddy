@@ -10,8 +10,7 @@ include "Nav.php";
 <html>
 <head>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleusercontent.com" >
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +25,11 @@ include "Nav.php";
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -101,13 +105,43 @@ include "Nav.php";
     </div>
 </section>
 
+<?php
+require_once 'google-api-php-client-2.2.3/vendor/autoload.php';
+include "connect.php";
+// init configuration
+$clientID = '962609924642-q5m1e6fsdbeipsd70v0q5ru304igm6gi.apps.googleusercontent.com';
+$clientSecret = '6LTOpoJU5OOodNNaWQlSQxXu';
+$redirectUri = 'http://localhost:63342/Evidence_Izposojenega_Gradiva/Profil.php';
+
+// create Client Request to access Google API
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectUri);
+$client->addScope("email");
+$client->addScope("profile");
+
+// authenticate code from Google OAuth Flow
+if (isset($_GET['code'])) {
+    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $client->setAccessToken($token['access_token']);
+
+    // get profile info
+    $google_oauth = new Google_Service_Oauth2($client);
+    $google_account_info = $google_oauth->userinfo->get();
+    $email =  $google_account_info->email;
+    $name =  $google_account_info->name;
+    $insert = $conn->query("INSERT into uporabnik (ime, email) VALUES ('" . $name . "','" . $email . "')");
 
 
 
 
+    // now you can use this profile info to create account in your website and make user logged in.
+} else {
+    echo "<a href='".$client->createAuthUrl()."'>Google Login</a>";
 
-
-
+}
+?>
 </body>
 
 
