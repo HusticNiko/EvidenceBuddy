@@ -51,8 +51,9 @@ $delete = $conn->query("DELETE FROM izposoja WHERE ID=$id");
 
                                 $sql = "SELECT i.ID, i.tk_evidenca, e.imeevidence, i.datum, i.tk_uporabnik
 FROM izposoja i
-INNER JOIN evidenca e ON i.tk_uporabnik = e.tk_uporabnik
-WHERE e.status_gradiva = 'IZPOSOJENO';";
+INNER JOIN evidenca e ON i.tk_evidenca = e.ID
+WHERE e.status_gradiva = 'IZPOSOJENO'
+AND i.tk_uporabnik='".$loggin_session."';";
                                 $result = mysqli_query($conn, $sql);
 
                                 echo "<div class=\"container\"><table class=\"table table-hover\">";
