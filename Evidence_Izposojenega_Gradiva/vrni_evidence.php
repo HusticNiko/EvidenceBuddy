@@ -72,12 +72,12 @@ AND i.tk_uporabnik='".$loggin_session."';";
 
                     </div>
                 </div>
-                <div class="col-lg-4">
+            </div>
+                <div class="col-lg-3">
                     <div class="home_right_img">
                         <img class="img-fluid" src="img/273a20e19c.png" alt="">
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </section>

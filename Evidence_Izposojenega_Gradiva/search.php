@@ -87,10 +87,6 @@ if (isset($_POST['search'])){
                                 } ?>
                             </div>
                         </div>
-                        <br>
-                        <form action="dodajanje_evidence.php" method="post" enctype="multipart/form-data">
-                            <input type="submit" name="submit" value="Dodajanje evidence"/>
-                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4">

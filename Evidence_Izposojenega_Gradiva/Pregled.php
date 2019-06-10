@@ -37,7 +37,7 @@ include "session.php";
                             <div class="col-12">
                                 <h2 class="contact-title col-sm-6">Pregled izposojenih gradiv</h2>
                             </div>
-                            <div class="col-lg-8 mb-4 mb-lg-0">
+                            <div class="col-lg-7 mb-4 mb-lg-0">
                                 <?php
 
                                 $sql = "SELECT e.imeevidence, i.datum, u.uporabnisko_ime
@@ -52,7 +52,7 @@ AND e.status_gradiva = 'IZPOSOJENO';";
                                 echo " <thead><tr><th>Ime evidence</th><th>Datum izposoje</th><th>Uporabnik</th></tr></thead>";
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['datum']}</td><td align='left'>{$row['uporabnisko_ime']}</td>";
-                                    echo "<td align='left'><form method='post' action='Pregled.php' ><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."></form></td></tr>";
+                                    echo "<td align='left'><form method='post' action='Pregled.php' ><input name='imeevidence' hidden value=" .$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."></form></td></tr>";
                                 }
                                 echo "</table></div>";
 
@@ -66,7 +66,7 @@ AND e.status_gradiva = 'IZPOSOJENO';";
                     </div>
                     <div class="col-lg-4">
                         <div class="home_right_img">
-                            <img class="img-fluid" src="img/273a20e19c.png" alt="">
+                            <img class="img-fluid" src="../../Evidence/praktikum-ii/Evidence_Izposojenega_Gradiva/img/273a20e19c.png" alt="">
                         </div>
                     </div>
                 </div>

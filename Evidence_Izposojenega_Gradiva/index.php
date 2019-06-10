@@ -1,12 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: niko
+ * User: filip
  * Date: 13. 05. 2019
- * Time: 17:31*/
+ * Time: 17:03
+ */
 ?>
-
-
 <!doctype html>
 <html lang="en">
 
@@ -15,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/images.png" type="image/png">
-    <title>EvidenceBuddy</title>
+    <title>Breed Portfolio - Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">

@@ -2,6 +2,35 @@
 
 
 include "NavUpo.php";
+
+if (isset($_POST['submit'])) {
+    $selectOption = $_POST['id'];
+
+    $date = date('Y/m/d H:i:s');
+
+
+    $insert = $conn->query("INSERT into izposoja (datum, tk_uporabnik, tk_evidenca) VALUES ('" . $date . "','" . $loggin_session . "','" . $selectOption . "')");
+    if ($insert) {
+        echo "<div align='center' class=\"alert alert-success\">
+  <strong>Gradivo izposojeno!</strong> uspešno ste izposodili gradivo.
+</div>";
+    } else {
+        echo "<div align='center' class=\"alert alert-warning\">
+  <strong>Gradivo ni izposojeno!</strong> nekaj je šlo narobe poskusi še enkrat!
+</div>";
+    }
+    $update = $conn->query("UPDATE evidenca set status_gradiva = 'IZPOSOJENO' where ID = $selectOption ");
+    if ($update) {
+        echo "<div align='center' class=\"alert alert-success\">
+  <strong>Gradivo posodobljeno!</strong> uspešno ste izposodili gradivo.
+</div>";
+    } else {
+        echo "<div align='center' class=\"alert alert-warning\">
+  <strong>Gradivo ni posodobljeno!</strong> nekaj je šlo narobe poskusi še enkrat!
+</div>";
+    }
+
+}
 ?>
 
 <!doctype html>
@@ -61,6 +90,12 @@ include "NavUpo.php";
                                                 <div class="caption">
                                                     <h4><?php echo $row['imeevidence']; ?></h4>
                                                     <p><?php echo $row['opis']; ?></p>
+                                                    <form action="/Evidence_Izposojenega_Gradiva/Gradivo.php" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $row['ID']?>">
+                                                                <?php if($row['status_gradiva']=="NEIZPOSOJENO") {?>
+                                                        <input type="submit" name="submit" value="Izposodi"/>
+                                                        <?php } ?>
+                                                    </form>
                                                 </div>
                                                 <img src="<?php echo $imageThumbURL; ?>" alt="..." style="height: 200px; width: 600px">
                                             </div>

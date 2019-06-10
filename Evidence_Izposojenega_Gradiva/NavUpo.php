@@ -46,7 +46,6 @@ include "session.php"
                         <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Profil.php">Domaca stran "<?php echo $uporabniskoIme; ?>"</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Gradivo.php">Gradiva</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/Pregled.php">Pregled</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/izposoja_evidenc.php">Izposoja</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/vrni_evidence.php">Vrnitev</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Evidence_Izposojenega_Gradiva/odjava.php">Odjava</a></li>
                     </ul>

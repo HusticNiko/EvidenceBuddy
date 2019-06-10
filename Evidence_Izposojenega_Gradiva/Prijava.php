@@ -7,7 +7,6 @@
  */
 include "Nav.php";
 ?>
-
 <html>
 <head>
     <meta name="google-signin-scope" content="profile email">
@@ -16,7 +15,7 @@ include "Nav.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/images.png" type="image/png">
-    <title>EvidenceBuddy</title>
+    <title>Breed Portfolio - Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
