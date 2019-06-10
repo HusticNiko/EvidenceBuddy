@@ -21,8 +21,10 @@ if(isset($_POST["submit"])) {
         $insert = $conn->query("INSERT into uporabnik (ime, priimek, uporabnisko_ime, email, geslo) VALUES ('" . $name . "','" . $surname . "','" . $upo_name . "','" . $email . "','" . $pasw . "')");
         if ($insert) {
             echo "<div align='center' class=\"alert alert-success\">
-  <strong>Račun ustvarjen!</strong> uspešno ste ustvarili račun.
+  <strong>Račun ustvarjen!</strong> uspešno ste ustvarili račun.Preusmerjeni boste čez 3s...
 </div>";
+header( "refresh:3;url=Prijava.php" );
+
         }else{
             echo "<div align='center' class=\"alert alert-warning\">
   <strong>Račun ni ustvarjen!</strong> nekaj je šlo narobe poskusi še enkrat!

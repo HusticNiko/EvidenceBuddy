@@ -1,6 +1,12 @@
 <?php
 include "NavUpo.php";
 include "session.php";
+
+if (isset($_POST['submit'])) {
+    $id = $_POST['ID'];
+
+$delete = $conn->query("DELETE FROM evidenca WHERE ID=$id AND status_gradiva='NEIZPOSOJENO'");
+}
 ?>
 
 <!doctype html>
@@ -33,11 +39,38 @@ include "session.php";
                         <br><br><br><br><br><br><br>
                         <h1 class="text-uppercase"><?php echo $Ime; ?></h1>
 
-                        <div class="row">
+                        <div class="row ">
                             <div class="col-12">
-                                <h2 class="contact-title col-sm-6">Pregled izposojenih gradiv</h2>
+                                <h2 class="contact-title col-sm-3">Moja gradiva</h2>
                             </div>
-                            <div class="col-lg-7 mb-4 mb-lg-0">
+                            <div class="col-lg-2 mb-4 mb-lg-0">
+                                <?php
+
+                                $sql = "SELECT e.ID, e.imeevidence, e.status_gradiva, e.tk_uporabnik
+FROM evidenca e
+WHERE e.tk_uporabnik = '".$loggin_session."';";
+                                $result = mysqli_query($conn, $sql);
+
+                                echo "<div class=\"container\"><table class=\"table table-hover\">";
+                                echo " <thead><tr><th>Ime evidence</th><th>Status</th><th>Izbriši</th></tr></thead>";
+                                while($row = mysqli_fetch_assoc($result)){
+                                    echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['status_gradiva']}</td>";
+                                        echo "<td align='left'><form method='post' action='Pregled.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='status_gradiva' hidden value=".$row['status_gradiva']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><button name='submit' type='submit'>Izbriši</button></form></td></tr>";
+                                }
+                                echo "</table></div>";
+
+
+
+                                ?>
+
+                            </div>
+
+                        </div>
+						<div class="row">
+                            <div class="col-12">
+                                <h2 class="contact-title col-sm-2">Pregled izposojenih gradiv</h2>
+                            </div>
+                            <div class="col-lg-2 mb-4 mb-lg-0">
                                 <?php
 
                                 $sql = "SELECT e.imeevidence, i.datum, u.uporabnisko_ime
@@ -52,7 +85,7 @@ AND e.status_gradiva = 'IZPOSOJENO';";
                                 echo " <thead><tr><th>Ime evidence</th><th>Datum izposoje</th><th>Uporabnik</th></tr></thead>";
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['datum']}</td><td align='left'>{$row['uporabnisko_ime']}</td>";
-                                    echo "<td align='left'><form method='post' action='Pregled.php' ><input name='imeevidence' hidden value=" .$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."></form></td></tr>";
+                                    echo "<td align='left'><form method='post' action='Pregled.php' ><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."></form></td></tr>";
                                 }
                                 echo "</table></div>";
 
@@ -64,11 +97,11 @@ AND e.status_gradiva = 'IZPOSOJENO';";
 
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    
+                    </div><div class="col-lg-4">
                         <div class="home_right_img">
-                            <img class="img-fluid" src="../../Evidence/praktikum-ii/Evidence_Izposojenega_Gradiva/img/273a20e19c.png" alt="">
+                            <img class="img-fluid" src="img/273a20e19c.png" alt="">
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

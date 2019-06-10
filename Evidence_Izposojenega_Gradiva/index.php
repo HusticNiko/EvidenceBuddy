@@ -1,11 +1,42 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: filip
+ * User: niko
  * Date: 13. 05. 2019
- * Time: 17:03
- */
+ * Time: 17:31*/
 ?>
+<?php
+
+
+$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+
+
+$bberry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+
+
+$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+
+
+$ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+
+
+$webos = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+
+
+if ($android || $bberry || $iphone || $ipod || $webos== true) 
+
+
+{ 
+
+
+header('Location: Evidence_Izposojenega_Gradiva/prijava.php');
+
+
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -14,7 +45,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/images.png" type="image/png">
-    <title>Breed Portfolio - Home</title>
+    <title>EvidenceBuddy</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="vendors/linericon/style.css">
