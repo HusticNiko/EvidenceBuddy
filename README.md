@@ -1,4 +1,4 @@
-# EvidenceBuddy  ![alt text](EvidenceBuddy.zip/Evidence_Izposojenega_Gradiva/img/carta_logo_v2.png)
+# EvidenceBuddy  ![alt text](Evidence_Izposojenega_Gradiva/img/carta_logo_v2.png)
 
 Aplikacija namenjena shranjevanju in vodenju evidenc izposojenega gradiva.
 
