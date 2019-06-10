@@ -8,12 +8,12 @@ Aplikacija namenjena shranjevanju in vodenju evidenc izposojenega gradiva.
 Za zagon aplikacije morate imeti nameščene stvari:
 Wamp/Xampp
 
-```
+
 [WAMP](http://www.wampserver.com/en/)
 [XAMPP](https://www.apachefriends.org/index.html)
 [PHPStorm](https://www.jetbrains.com/phpstorm/)
 [MySql](https://www.mysql.com/)
-```
+
 
 ### Installing
 
@@ -27,7 +27,7 @@ Wamp/Xampp
 
 ## Verzija programske opreme
 
-[SemVer](https://www.apachefriends.org/download_success.html). 
+[XAMPP](https://www.apachefriends.org/download_success.html). 
 
 ## Avtorji
 
