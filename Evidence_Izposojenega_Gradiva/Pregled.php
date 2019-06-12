@@ -7,6 +7,13 @@ if (isset($_POST['submit'])) {
 
 $delete = $conn->query("DELETE FROM evidenca WHERE ID=$id AND status_gradiva='NEIZPOSOJENO'");
 }
+if (isset($_POST['vrni'])) {
+    $id = $_POST['ID'];
+    $evidenca=$_POST['tk_evidenca'];
+
+    $update = $conn->query("UPDATE evidenca set status_gradiva = 'NEIZPOSOJENO' where ID = $evidenca");
+    $delete = $conn->query("DELETE FROM izposoja WHERE ID=$id");
+}
 ?>
 
 <!doctype html>
@@ -72,7 +79,7 @@ WHERE e.tk_uporabnik = '".$loggin_session."';";
                             <div class="col-lg-2 mb-4 mb-lg-0">
                                 <?php
 
-                                $sql = "SELECT e.imeevidence, i.datum, u.uporabnisko_ime
+                                $sql = "SELECT i.ID, i.tk_evidenca, e.imeevidence, i.datum, u.uporabnisko_ime, i.tk_uporabnik
 FROM izposoja i
 INNER JOIN uporabnik u ON i.tk_uporabnik = u.ID
 INNER JOIN evidenca e ON i.tk_evidenca = e.ID
@@ -81,10 +88,11 @@ AND e.status_gradiva = 'IZPOSOJENO';";
                                 $result = mysqli_query($conn, $sql);
 
                                 echo "<div class=\"container\"><table class=\"table table-hover\">";
-                                echo " <thead><tr><th>Ime evidence</th><th>Datum izposoje</th><th>Uporabnik</th></tr></thead>";
+                                echo " <thead><tr><th>Ime evidence</th><th>Datum izposoje</th><th>Uporabnik</th><th>Vrnjeno</th></tr></thead>";
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['datum']}</td><td align='left'>{$row['uporabnisko_ime']}</td>";
-                                    echo "<td align='left'><form method='post' action='Pregled.php' ><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."></form></td></tr>";
+                                    echo "<td align='left'><form method='post' action='Pregled.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum'].">
+                                    <input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><input name='tk_evidenca' hidden value=".$row['tk_evidenca']."><button class='primary_btn' name='vrni' type='submit'><span>Vrnjeno</span></button></form></td></tr>";
                                 }
                                 echo "</table></div>";
 

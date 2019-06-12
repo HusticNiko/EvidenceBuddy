@@ -2,14 +2,6 @@
 include "NavUpo.php";
 include "session.php";
 
-if (isset($_POST['submit'])) {
-    $id = $_POST['ID'];
-$evidenca=$_POST['tk_evidenca'];
-
-$update = $conn->query("UPDATE evidenca set status_gradiva = 'NEIZPOSOJENO' where ID = $evidenca");
-$delete = $conn->query("DELETE FROM izposoja WHERE ID=$id");
-}
-
 ?>
 
 <!doctype html>
@@ -56,10 +48,10 @@ AND i.tk_uporabnik='".$loggin_session."';";
                                 $result = mysqli_query($conn, $sql);
 
                                 echo "<div class=\"container\"><table class=\"table table-hover\">";
-                                echo " <thead><tr><th>Ime evidence</th><th>Datum izposoje</th><th>Vrni</th></tr></thead>";
+                                echo " <thead><tr><th>Ime evidence</th><th>Datum izposoje</th></tr></thead>";
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['datum']}</td>";
-                                        echo "<td align='left'><form method='post' action='vrni_evidence.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><input name='tk_evidenca' hidden value=".$row['tk_evidenca']."><button name='submit' type='submit'>Vrni</button></form></td></tr>";
+                                        echo "<td align='left'><form method='post' action='vrni_evidence.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><input name='tk_evidenca' hidden value=".$row['tk_evidenca']."></form></td></tr>";
                                 }
                                 echo "</table></div>";
 
