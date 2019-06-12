@@ -82,8 +82,8 @@ if (isset($_POST['submit'])) {
                                 if(mysqli_num_rows($result) > 0){
 
                                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                                        $imageThumbURL = 'Evidenca/'.$row["pot"];
-                                        $imageURL = 'Evidenca/'.$row["pot"];
+                                        $imageThumbURL = 'Evidence_Izposojenega_Gradiva/Evidenca/'.$row["pot"];
+                                        $imageURL = 'Evidence_Izposojenega_Gradiva/Evidenca/'.$row["pot"];
 
                                         ?>
                                         <div class="col-xs-3 col-sm-2 col-md-5">

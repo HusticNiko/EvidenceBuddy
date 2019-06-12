@@ -58,6 +58,17 @@ header('Location: Evidence_Izposojenega_Gradiva/prijava.php');
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 
+	<style>
+		.img-fluid {
+   -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+    -webkit-animation:spin 30s linear infinite;
+    -moz-animation:spin 30s linear infinite;
+    animation:spin 30s linear infinite;
+}
+
+@keyframes spin { 100% { -webkit-transform: scaleX(3600deg); transform:rotate(3600deg); } }
+	</style>
 
 </head>
 
@@ -103,7 +114,8 @@ header('Location: Evidence_Izposojenega_Gradiva/prijava.php');
                 </div>
                 <div class="col-lg-4">
                     <div class="home_right_img">
-                        <img class="img-fluid" src="img/profilka.png" alt="">
+					<a  href="/Evidence_Izposojenega_Gradiva/about.html">
+                        <img class="img-fluid" src="img/profilka.png"></a>
                     </div>
                 </div>
             </div>

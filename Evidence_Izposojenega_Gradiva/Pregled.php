@@ -92,7 +92,7 @@ AND e.status_gradiva = 'IZPOSOJENO';";
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['datum']}</td><td align='left'>{$row['uporabnisko_ime']}</td>";
                                     echo "<td align='left'><form method='post' action='Pregled.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='datum' hidden value=".$row['datum'].">
-                                    <input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><input name='tk_evidenca' hidden value=".$row['tk_evidenca']."><button class='primary_btn' name='vrni' type='submit'><span>Vrnjeno</span></button></form></td></tr>";
+                                    <input name='uporabnisko_ime' hidden value=".$row['uporabnisko_ime']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><input name='tk_evidenca' hidden value=".$row['tk_evidenca']."><button class='primary_btn' name='vrni' type='submit'><span>Potrdi</span></button></form></td></tr>";
                                 }
                                 echo "</table></div>";
 
