@@ -15,7 +15,7 @@ Wamp/Xampp
 [MySql](https://www.mysql.com/)
 
 
-### Installing
+### Namestitev
 
 
 
