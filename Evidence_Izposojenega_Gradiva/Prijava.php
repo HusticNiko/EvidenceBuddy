@@ -39,7 +39,8 @@ include "Nav.php";
         <div class="container">
             <div class="row align-content-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content">
+				<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                    <div class="banner_content w3-animate-left">
                         <br>
                         <br>
 

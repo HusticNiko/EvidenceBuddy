@@ -27,6 +27,7 @@ $delete = $conn->query("DELETE FROM evidenca WHERE ID=$id AND status_gradiva='NE
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -35,10 +36,8 @@ $delete = $conn->query("DELETE FROM evidenca WHERE ID=$id AND status_gradiva='NE
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content">
-                        <br><br><br><br><br><br><br>
-                        <h1 class="text-uppercase"><?php echo $Ime; ?></h1>
-
+                    <div class="banner_content w3-animate-left">
+                        <br><br><br><br><br>
                         <div class="row ">
                             <div class="col-12">
                                 <h2 class="contact-title col-sm-3">Moja gradiva</h2>
@@ -55,7 +54,7 @@ WHERE e.tk_uporabnik = '".$loggin_session."';";
                                 echo " <thead><tr><th>Ime evidence</th><th>Status</th><th>Izbriši</th></tr></thead>";
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo"<tr><td align='left'>{$row['imeevidence']}</form></td><td align='left'>{$row['status_gradiva']}</td>";
-                                        echo "<td align='left'><form method='post' action='Pregled.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='status_gradiva' hidden value=".$row['status_gradiva']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><button name='submit' type='submit'>Izbriši</button></form></td></tr>";
+                                        echo "<td align='left'><form method='post' action='Pregled.php' ><input name='ID' hidden value=".$row['ID']."><input name='imeevidence' hidden value=".$row['imeevidence']."><input name='status_gradiva' hidden value=".$row['status_gradiva']."><input name='tk_uporabnik' hidden value=".$row['tk_uporabnik']."><button class='primary_btn' name='submit' type='submit'><span>Izbriši</span></button></form></td></tr>";
                                 }
                                 echo "</table></div>";
 
@@ -98,7 +97,7 @@ AND e.status_gradiva = 'IZPOSOJENO';";
                         </div>
                     </div>
                     
-                    </div><div class="col-lg-4">
+                    </div><div class="col-lg-3">
                         <div class="home_right_img">
                             <img class="img-fluid" src="img/273a20e19c.png" alt="">
                         </div>

@@ -51,7 +51,8 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"/>
     <!-- main css -->
-    <link rel="stylesheet" href="css/galerija.css">
+    <link rel="stylesheet" href="css/galerija.css">	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -59,8 +60,8 @@ if (isset($_POST['submit'])) {
     <div class="banner_inner">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-lg-6">
-                    <div class="banner_content">
+                <div class="col-lg-5">
+                    <div class="banner_content w3-animate-left">
                         <br><br><br><br><br><br><br>
                         <form class="navbar-form navbar-center" action="search.php" role="search" method="post">
                             <div class="form-group">
@@ -85,7 +86,7 @@ if (isset($_POST['submit'])) {
                                         $imageURL = 'Evidenca/'.$row["pot"];
 
                                         ?>
-                                        <div class="col-xs-6 col-sm-4 col-md-4">
+                                        <div class="col-xs-3 col-sm-2 col-md-5">
                                             <div class="thumbnail">
                                                 <div class="caption">
                                                     <h4><?php echo $row['imeevidence']; ?></h4>
@@ -110,7 +111,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="home_right_img">
                         <img class="img-fluid" src="img/banner/galerija.png" alt="">
                     </div>

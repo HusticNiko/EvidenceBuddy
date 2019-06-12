@@ -23,7 +23,7 @@ include "session.php";
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
@@ -33,7 +33,7 @@ include "session.php";
         <div class="container">
             <div class="row align-content-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content">
+                    <div class="banner_content w3-animate-left">
                         <br>
                         <br>
 

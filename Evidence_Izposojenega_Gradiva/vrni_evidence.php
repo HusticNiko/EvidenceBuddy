@@ -30,6 +30,7 @@ $delete = $conn->query("DELETE FROM izposoja WHERE ID=$id");
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -37,11 +38,9 @@ $delete = $conn->query("DELETE FROM izposoja WHERE ID=$id");
     <div class="banner_inner">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-lg-6">
-                    <div class="banner_content">
-                        <br><br><br><br><br><br><br>
-                        <h1 class="text-uppercase"><?php echo $Ime; ?></h1>
-
+                <div class="col-lg-7">
+                    <div class="banner_content w3-animate-left">
+                        <br><br>
                         <div class="row">
                             <div class="col-12">
                                 <h2 class="contact-title col-sm-6">Vrnitev evidence</h2>

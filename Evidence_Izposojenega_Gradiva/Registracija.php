@@ -56,6 +56,7 @@ header( "refresh:3;url=Prijava.php" );
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- main css -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -66,7 +67,7 @@ header( "refresh:3;url=Prijava.php" );
         <div class="container">
             <div class="row align-content-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content">
+                    <div class="banner_contentw3-animate-left">
                         <br>
                         <br>
 

@@ -54,6 +54,7 @@ header('Location: Evidence_Izposojenega_Gradiva/prijava.php');
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -91,7 +92,7 @@ header('Location: Evidence_Izposojenega_Gradiva/prijava.php');
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content">
+                    <div class="banner_content w3-animate-left">
                         <br>
                         <br>
                         <h3>Dobrodošli !</h3>
