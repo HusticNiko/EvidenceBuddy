@@ -82,8 +82,8 @@ if (isset($_POST['submit'])) {
                                 if(mysqli_num_rows($result) > 0){
 
                                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                                        $imageThumbURL = 'Evidence_Izposojenega_Gradiva/Evidenca/'.$row["pot"];
-                                        $imageURL = 'Evidence_Izposojenega_Gradiva/Evidenca/'.$row["pot"];
+                                        $imageThumbURL = 'Evidenca/'.$row["pot"];
+                                        $imageURL = 'Evidenca/'.$row["pot"];
 
                                         ?>
                                         <div class="col-xs-3 col-sm-2 col-md-5">
@@ -91,9 +91,9 @@ if (isset($_POST['submit'])) {
                                                 <div class="caption">
                                                     <h4><?php echo $row['imeevidence']; ?></h4>
                                                     <p><?php echo $row['opis']; ?></p>
-                                                    <form action="/Evidence_Izposojenega_Gradiva/Gradivo.php" method="post">
+                                                    <form action="Gradivo.php" method="post">
                                                         <input type="hidden" name="id" value="<?php echo $row['ID']?>">
-                                                                <?php if($row['status_gradiva']=="NEIZPOSOJENO") {?>
+                                                                <?php if($row['status_gradiva']=="NEIZPOSOJENO" && $row['tk_uporabnik']!=$loggin_session) {?>
                                                         <input type="submit" name="submit" value="Izposodi"/>
                                                         <?php } ?>
                                                     </form>

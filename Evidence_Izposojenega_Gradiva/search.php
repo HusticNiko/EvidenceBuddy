@@ -81,7 +81,7 @@ if (isset($_POST['search'])){
                                                     <p><?php echo $row['opis']; ?></p>
                                                     <form action="Gradivo.php" method="post">
                                                         <input type="hidden" name="id" value="<?php echo $row['ID']?>">
-                                                        <?php if($row['status_gradiva']=="NEIZPOSOJENO") {?>
+                                                        <?php if($row['status_gradiva']=="NEIZPOSOJENO" && $row['tk_uporabnik']!=$loggin_session) {?>
                                                             <input type="submit" name="submit" value="Izposodi"/>
                                                         <?php } ?>
                                                     </form>
