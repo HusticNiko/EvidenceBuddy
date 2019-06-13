@@ -15,11 +15,26 @@ Wamp/Xampp
 
 [WAMP](http://www.wampserver.com/en/)
 [XAMPP](https://www.apachefriends.org/index.html)
-[PHPStorm](https://www.jetbrains.com/phpstorm/)
-[MySql](https://www.mysql.com/)
 
 
 ### Namestitev
+
+* 1. Prenesite si projekt v ZIP obliki in ga razširite.
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture5.JPG)
+
+* 2. Prenesite si program XAMPP ki ga najdete na link-u. Po končani namestitvi zaženite program in v programu zaženite Apache in MySQL strežnika s pritiskom na gumb start.
+ ![alt text](Evidence_Izposojenega_Gradiva/img/Capture6.JPG)
+
+* 3. Pojdite v lokalni disk (ponavadi je označen s C:) in poiščite mapo XAMPP, ter jo odprite.
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture7.JPG)
+
+* 4. V mapo htdocs kopirajte celoten razširjen projekt.
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture8.JPG)
+
+* 5. Sedaj v poljuben brskalnik vpišite (http://localhost/80). Oziroma port na katerem vam deluje strežnik. Odpre se vam XAMPP stran na kateri pritisnite PhpMyAdmin. Nato s pritiskom na gumb **UVOZI** izberite razširjen projekt in v njem izberite MySql datoteko evidence ter pritisnite gumb **IZVEDI**.
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture9.JPG)
+
+* 6. Sedaj v poljuben brskalnik vpišite (http:// vaš lokalni IP naslov /Evidence_Izposojenega_Gradiva/index.php). Vaš lokalni IP naslov lahko preverite tukaj [MyIP](https://www.whatismyip.com/). 
 
 
 ## Funkcionalnosti
@@ -32,25 +47,20 @@ Wamp/Xampp
 * Hitra povezava na socialne medije
 * Prilagojena mobilna verzija rešitve
 
-## Izdelano z
-
-* [PhpStorm](https://www.jetbrains.com/phpstorm/)
-* [XAMPP](https://www.apachefriends.org/index.html)
-
 
 ## Verzija programske opreme uporabljene pri izdelavi rešitve (link za namestitev)
 
 [XAMPP](https://www.apachefriends.org/download_success.html). 
 
-## Uporabljena tehnologija
+## Uporabljena tehnologija za izdelavo
 
-* MySql
-* PHPStorm
-* XAMPP
-* Notepad++
-* GitLab
+* [PhpStorm](https://www.jetbrains.com/phpstorm/)
+* [XAMPP](https://www.apachefriends.org/index.html)
+* [NotePad++](https://notepad-plus-plus.org/)
+* [GitLab](https://about.gitlab.com/)
+* [MySql](https://www.mysql.com/)
 
-## Avtorji
+## Ustvarjalci
 
 * **Niko Hustić**
 * **Filip Edšid**
