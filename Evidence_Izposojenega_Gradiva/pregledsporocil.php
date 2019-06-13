@@ -27,6 +27,7 @@ include "NavUpo.php";
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -35,7 +36,7 @@ include "NavUpo.php";
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content">
+                    <div class="banner_content w3-animate-left">
                         <br><br><br><br><br><br><br>
 
                         <div class="row ">
@@ -67,7 +68,7 @@ include "NavUpo.php";
                         </div>
                     </div>
 
-                </div><div class="col-lg-4">
+                </div><div class="col-lg-3">
                     <div class="home_right_img">
                         <img class="img-fluid" src="img/273a20e19c.png" alt="">
                     </div>

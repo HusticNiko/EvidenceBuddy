@@ -53,6 +53,15 @@ if (isset($_POST['submit'])) {
     <!-- main css -->
     <link rel="stylesheet" href="css/galerija.css">	
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<style>
+	
+	.zeleno{
+		color: blue;
+	}
+	
+	
+	</style>
 </head>
 
 <body>
@@ -82,8 +91,8 @@ if (isset($_POST['submit'])) {
                                 if(mysqli_num_rows($result) > 0){
 
                                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                                        $imageThumbURL = 'Evidenca/'.$row["pot"];
-                                        $imageURL = 'Evidenca/'.$row["pot"];
+                                        $imageThumbURL = 'Evidence_Izposojenega_Gradiva/Evidenca/'.$row["pot"];
+                                        $imageURL = 'Evidence_Izposojenega_Gradiva/Evidenca/'.$row["pot"];
 
                                         ?>
                                         <div class="col-xs-3 col-sm-2 col-md-5">
@@ -94,7 +103,7 @@ if (isset($_POST['submit'])) {
                                                     <form action="Gradivo.php" method="post">
                                                         <input type="hidden" name="id" value="<?php echo $row['ID']?>">
                                                                 <?php if($row['status_gradiva']=="NEIZPOSOJENO" && $row['tk_uporabnik']!=$loggin_session) {?>
-                                                        <input type="submit" name="submit" value="Izposodi"/>
+                                                        <input class="zeleno "type="submit" name="submit" value="Izposodi"/>
                                                         <?php } ?>
                                                     </form>
                                                 </div>
