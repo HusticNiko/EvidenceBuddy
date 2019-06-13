@@ -1,3 +1,14 @@
+CREATE TABLE sporočila (
+   `ID_sporočilo` int(11) NOT NULL auto_increment,
+   `pošiljatelj` varchar(20) NOT NULL,
+   `prejemnik` varchar(20)  NOT NULL,
+   `naziv` varchar(40)  NOT NULL,
+   `sporočilo` varchar(120)  NOT NULL,
+   `status` varchar(20)  NOT NULL,
+   primary key(`ID_sporočilo`))
+ENGINE = InnoDB;
+
+
 CREATE TABLE `evidenca` (
   `ID` int(11) NOT NULL,
   `imeevidence` varchar(45) COLLATE utf8mb4_slovenian_ci NOT NULL,

@@ -20,7 +20,6 @@ include "NavUpo.php";
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -30,84 +29,44 @@ include "NavUpo.php";
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
                     <div class="banner_content">
-                        <br><br><br><br><br>
+                        <br><br><br><br><br><br><br>
 
                         <div class="row">
                             <div class="col-12">
                             </div>
                             <div class="col-lg-8 mb-4 mb-lg-0">
                                     <h1>Novo sporočilo</h1>
-									
                                     <form action="posiljanjeobvestila.php" method="post">
-  <input type="hidden" name="formID" value="91623679779376" />
-  <div role="main" class="form-all">
-    <ul class="form-section page-section">
-      <li id="cid_1" class="form-input-wide" data-type="control_head">
-
-      </li>
-      <li class="form-line" data-type="control_radio" id="id_3">
-        <div id="cid_3" class="form-input-wide">
-          <div class="form-multiple-column" data-columncount="3" data-component="radio">
-            <span class="form-radio-item">
-              <span class="dragger-item">
-              </span>
-              <input type="radio" class="form-radio" id="input_3_0" name="q3_feedbackType" value="Comments" />
-              <label id="label_input_3_0" for="input_3_0"> Vprašanje </label>
-            </span>
-            <span class="form-radio-item">
-              <span class="dragger-item">
-              </span>
-              <input type="radio" class="form-radio" id="input_3_1" name="q3_feedbackType" value="Bug Reports" />
-              <label id="label_input_3_1" for="input_3_1"> Obvestilo </label>
-            </span>
-            <span class="form-radio-item">
-              <span class="dragger-item">
-              </span>
-              <input type="radio" class="form-radio" id="input_3_2" name="q3_feedbackType" value="Questions" />
-              <label id="label_input_3_2" for="input_3_2"> Zahteva </label>
-            </span>
-          </div>
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_textarea" id="id_4">
-        <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4">
-         Sporočilo:
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_4" class="form-input-wide jf-required">
-          <textarea id="input_4" class="form-textarea validate[required]" name="q4_describeFeedback" cols="40" rows="6" data-component="textarea" required=""></textarea>
-        </div>
-      </li>
-      <li class="form-line jf-required" data-type="control_fullname" id="id_8">
-        <label class="form-label form-label-top form-label-auto" id="label_8" for="first_8">
-          Prejemnik
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_8" class="form-input-wide jf-required">
-          <div data-wrapper-react="true">
-            <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="first_8" name="q8_name[first]" class="form-textbox validate[required]" size="10" value="" data-component="first" aria-labelledby="label_8 sublabel_8_first" placeholder="Ime" required="" />
-            </span>
-            <span class="form-sub-label-container" style="vertical-align:top">
-              <input type="text" id="last_8" name="q8_name[last]" class="form-textbox validate[required]" size="15" value="" data-component="last" aria-labelledby="label_8 sublabel_8_last" placeholder="Priimek" required="" />
-            </span>
-          </div>
-        </div>
-      </li>
-     
-      <li class="form-line" data-type="control_button" id="id_2">
-        <div id="cid_2" class="form-input-wide">
-          <br>
-           <button type="submit" name="submit" class="primary_btn button-contactForm" class="prijavabtn">Pošlji</button>
-          
-        </div>
-     
-  </div>
+                                        <br />
+                                        <label for="message">Prejemnik</label><br><textarea cols="40" rows="1" id="prejemnik" name="prejemnik"></textarea>  <br />
+                                        <label for="message">Naziv</label><br>
+                                            <div id="cid_3" class="form-input-wide">
+                                                <div class="form-multiple-column" data-columncount="3" data-component="radio">
+                                                <span class="form-radio-item">
+                                                <input type="radio" class="form-radio" id="input_3_0" name="naziv" value="Vprašanje" />
+                                                <label id="label_input_3_0" for="input_3_0"> Vprašanje </label>
+                                                    </span>
+                                                    <span class="form-radio-item">
+                                                <span class="dragger-item">
+                                                </span>
+                                                <input type="radio" class="form-radio" id="input_3_1" name="naziv" value="Obvestilo" />
+                                                <label id="label_input_3_1" for="input_3_1"> Obvestilo </label>
+                                                    </span>
+                                                    <span class="form-radio-item">
+                                                <span class="dragger-item">
+                                                </span>
+                                                <input type="radio" class="form-radio" id="input_3_2" name="naziv" value="Zahteva" />
+                                                <label id="label_input_3_2" for="input_3_2"> Zahteva </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        <br>
+                                        <label for="message">Sporočilo</label><textarea cols="40" rows="5" id="sporočilo" name="sporočilo"></textarea><br />
+                                        <button type="submit" class='primary_btn' name="Pošlji" >Pošlji</button>
                                     </form>
+
+
+
                                     <?php
                                     require 'connect.php';
                                     ini_set('display_errors', 1);
@@ -118,8 +77,11 @@ include "NavUpo.php";
                                     if (isset($_POST['sporočilo']) && isset($_POST['Pošlji'])) {
                                         $prejemnik = $_POST['prejemnik'];
                                         $sporočilo = $_POST['sporočilo'];
+                                        $naziv = $_POST['naziv'];
                                         $user_check = $_SESSION['upo-ime'];
-                                        $sql = "INSERT INTO sporočila(pošiljatelj,prejemnik,sporočilo) VALUES ('" . $user_check . "','" . $prejemnik . "','" . $sporočilo . "')";
+
+
+                                        $sql = "INSERT INTO sporočila(pošiljatelj,prejemnik,naziv,sporočilo,status) VALUES ('" . $user_check . "','" . $prejemnik . "','" . $naziv . "','" . $sporočilo . "','NEPREGLEDANO')";
 
                                         if ($conn->query($sql) === TRUE) {
                                             echo "Sporočilo uspešno poslano";
@@ -134,13 +96,6 @@ include "NavUpo.php";
                             </div>
 
                         </div>
-						
-					
-
-<script type="text/javascript">JotForm.ownerView=true;</script>
-						
-						
-						
                     </div>
                 </div>
                 <div class="col-lg-3">

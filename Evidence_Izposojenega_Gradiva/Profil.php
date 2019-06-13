@@ -9,6 +9,10 @@ $count1 = $row1['count1'];
 $st_izposoj = mysqli_query($conn, "SELECT COUNT(*) AS `count2` FROM `izposoja` WHERE tk_uporabnik = '".$loggin_session."'");
 $row2 = mysqli_fetch_array($st_izposoj);
 $count2 = $row2['count2'];
+
+$st_sporocil = mysqli_query($conn, "SELECT COUNT(*) AS `count3` FROM `sporočila` WHERE prejemnik = '".$uporabniskoIme."' and status='NEPREGLEDANO' ");
+$row3 = mysqli_fetch_array($st_sporocil);
+$count3 = $row3['count3'];
 ?>
 
 <!doctype html>
@@ -29,7 +33,6 @@ $count2 = $row2['count2'];
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -38,7 +41,7 @@ $count2 = $row2['count2'];
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="banner_content w3-animate-left">
+                    <div class="banner_content">
                         <br><br><br><br><br><br><br>
                         <h3>Pozdravljen!</h3>
                         <h1 class="text-uppercase"><?php echo $Ime; ?></h1>
@@ -53,19 +56,24 @@ $count2 = $row2['count2'];
 
                         <br>
                         <br>
-                        <div class="row justify-content-lg-start justify-content-center col-sm-9">
-                            <div class="statistics_item col-sm-3">
+                        <div class="row justify-content-lg-start justify-content-center col-sm-6">
+                            <div class="statistics_item col-sm-6">
                                 <h3><span class="counter"><?php echo $count2; ?></span></h3>
                                 <p>Št. izposoj</p>
                             </div>
-                            <div class="statistics_item col-sm-3">
+                            <div class="statistics_item col-sm-6">
                                 <h3><span class="counter"><?php echo $count1; ?></span></h3>
                                 <p>Št. dodanih evidenc</p>
+                            </div>
+                            <div class="statistics_item col-sm-12">
+                                <p>Št. novih sporočil</p>
+                                <h3><span class="counter"><?php echo $count3; ?></span></h3>
+                                <a href="pregledsporocil.php">Preglej sporočila</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="home_right_img">
                         <img class="img-fluid" src="img/banner/home-right.png" alt="">
                     </div>
