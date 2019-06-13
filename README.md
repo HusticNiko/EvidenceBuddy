@@ -1,7 +1,6 @@
 # EvidenceBuddy  ![alt text](Evidence_Izposojenega_Gradiva/img/carta_logo_v2.png)
 
-Aplikacija namenjena shranjevanju in vodenju evidenc izposojenega gradiva.
-
+Projekt je bil izdelan z željo nuditi potrošniku možnost sledenja in upravljanja z njegovim gradivom. Tako smo naredili spletno rešitev, ki to rešitev nudi.
 
 ### Predpogoji za zagon
 
@@ -18,6 +17,15 @@ Wamp/Xampp
 ### Namestitev
 
 
+## Funkcionalnosti
+
+* Prijava/Registracija
+* Dodajanje/Izposoja/Vrnitev/Pregled gradiva
+* Sporočanje med uporabniki
+* Spreminjanje gesla
+* Dodajanje slike gradiva
+* Hitra povezava na socialne medije
+* Prilagojena mobilna verzija rešitve
 
 ## Izdelano z
 
@@ -25,9 +33,17 @@ Wamp/Xampp
 * [XAMPP](https://www.apachefriends.org/index.html)
 
 
-## Verzija programske opreme
+## Verzija programske opreme uporabljene pri izdelavi rešitve (link za namestitev)
 
 [XAMPP](https://www.apachefriends.org/download_success.html). 
+
+## Uporabljena tehnologija
+
+* MySql
+* PHPStorm
+* XAMPP
+* Notepad++
+* GitLab
 
 ## Avtorji
 
