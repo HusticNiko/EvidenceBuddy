@@ -77,8 +77,14 @@ if (isset($_POST['search'])){
                                         <div class="col-xs-6 col-sm-4 col-md-4">
                                             <div class="thumbnail">
                                                 <div class="caption">
-                                                    <h4>Slika</h4>
-                                                    <p><?php echo $row['imeevidence']; ?></p>
+                                                    <h4><?php echo $row['imeevidence']; ?></h4>
+                                                    <p><?php echo $row['opis']; ?></p>
+                                                    <form action="Gradivo.php" method="post">
+                                                        <input type="hidden" name="id" value="<?php echo $row['ID']?>">
+                                                        <?php if($row['status_gradiva']=="NEIZPOSOJENO") {?>
+                                                            <input type="submit" name="submit" value="Izposodi"/>
+                                                        <?php } ?>
+                                                    </form>
                                                 </div>
                                                 <img src="<?php echo $imageThumbURL; ?>" alt="..." style="height: 200px; width: 600px">
                                             </div>
