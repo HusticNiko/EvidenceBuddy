@@ -2,7 +2,10 @@
 
 Projekt je bil izdelan z željo nuditi potrošniku možnost sledenja in upravljanja z njegovim gradivom. Tako smo naredili spletno rešitev, ki to rešitev nudi.
 
-Profil ![alt text](Evidence_Izposojenega_Gradiva/img/capture1.jpg)
+![alt text](Evidence_Izposojenega_Gradiva/img/capture1.JPG)
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture2.JPG)
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture3.JPG)
+![alt text](Evidence_Izposojenega_Gradiva/img/Capture4.JPG)
 
 ### Predpogoji za zagon
 
